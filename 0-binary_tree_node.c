@@ -6,18 +6,21 @@
  * @value: value to be stored at the created node
  * Return: a pointer to the newly created node
  */
- binary_tree_t *binary_tree_node(binary_tree_t *parent, int value) {
-	binary_tree_t * createNode;
+binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
+{
+	binary_tree_t *createNode;
+
 	createNode = malloc(sizeof(binary_tree_t));
+
 	if (createNode == NULL)
-			return NULL;
+		return (NULL);
 	if (parent == NULL)
-			createNode->parent = NULL;
+		createNode->parent = NULL;
 	else
 		createNode->parent = parent;
-	
+
 	createNode->left = NULL;
 	createNode->right = NULL;
 	createNode->n = value;
-	return createNode;
- }
+	return (createNode);
+}
