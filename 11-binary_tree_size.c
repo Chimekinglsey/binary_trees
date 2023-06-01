@@ -6,7 +6,7 @@
 */
 size_t binary_tree_size(const binary_tree_t *tree)
 {
-	unsigned int node_rt = 0, node_lf = 0, sum = 0;
+	unsigned int node_rt = 0, node_lf = 0, root = 1;
 
 	if (!tree)
 		return (0);
@@ -14,7 +14,5 @@ size_t binary_tree_size(const binary_tree_t *tree)
 		node_lf = binary_tree_size(tree->left);
 	if (tree->right)
 		node_rt = binary_tree_size(tree->right);
-	sum += node_rt + node_lf;
-	
-	return (sum + 1);
+	return (node_rt + node_lf + root);
 }
